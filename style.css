@@ -28,6 +28,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.075);
   border-bottom: transparent;
   border-radius: 8px;
+  min-height: 100vh;
 }
 
 .logo-box {
