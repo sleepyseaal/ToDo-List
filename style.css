@@ -19,3 +19,39 @@ body {
   line-height: 1.6;
   color: var(--primary-color);
 }
+
+.sidebar {
+  background-color: var(--bg-color);
+  margin-top: 1em;
+  margin-left: 1em;
+  padding: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  border-bottom: transparent;
+  border-radius: 8px;
+}
+
+.logo-box {
+  display: flex;
+}
+
+.logo-title {
+  font-size: 1.5rem;
+  margin-left: .4em;
+}
+
+.spinner {
+  width: 1.7em;
+  animation: spin 1.5s infinite;
+}
+
+@keyframes spin {
+  0% { 
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.links-list {
+  list-style: none;
+}
