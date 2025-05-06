@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #151515;
+  --bg-color: #f2f2f2;
+  --text-color: #919191;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: var(--primary-color);
+}
