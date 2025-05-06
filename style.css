@@ -88,3 +88,22 @@ body {
 #search-list {
   border: none;
 }
+
+.links-list {
+  font-size: 1.2rem;
+  
+}
+
+.link {
+  margin: 2em 0 2em 
+}
+
+link a:hover {
+  cursor: pointer;
+}
+
+.link a, link a:hover, link a:focus, link a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
