@@ -55,3 +55,36 @@ body {
 .links-list {
   list-style: none;
 }
+
+.buttons-box {
+  display: flex;
+  gap: 2px;
+}
+
+#add-list {
+  margin: 1em 0;
+  padding: .7em;
+  flex-grow: 3;
+  font-size: 1.2rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+}
+
+#add-list:hover {
+  background-color: rgb(250, 250, 136);
+  cursor: pointer;
+  transform: scale(102%);
+}
+
+.search-emoji {
+  font-size: 2.3rem;
+}
+
+.search-emoji:hover {
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+#search-list {
+  border: none;
+}
