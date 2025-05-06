@@ -5,25 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
     <link rel="icon" href="icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
     <div class="sidebar" role="region"
       aria-label="Sidebar and lists controls">
-        <img src="spinner.svg" alt class="spinner"> 
+      <div class="logo-box">
+        <img src="spinner.svg" alt class="spinner">
         <div class="logo-title">Codome</div>
+      </div>
 
-        <button class="add-list">Add List</button>
-        <button>🔍</button>
+      <button class="add-list">Add List</button>
+      <button>🔍</button>
 
-        <nav>
-          <ul class="links-list">
-              <li class="link">📨 Inbox</li>
-              <li class="link"> 🗃️Archive</li>
-              <li class="link">📂 Reports</li>
-              <li class="link">🔔 Notifications</li>
-          </div>
+      <nav>
+        <ul class="links-list">
+          <li class="link">📨 Inbox</li>
+          <li class="link"> 🗃️ Archive</li>
+          <li class="link">📂 Reports</li>
+          <li class="link">🔔 Notifications</li>
+
         </ul>
       </nav>
     </div>
