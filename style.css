@@ -233,3 +233,15 @@ dialog::backdrop {
 #listForm button:hover {
   background-color: #0056b3;
 }
+
+@media (max-width: 599px) {
+  .card {
+    width: 80%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .card {
+    width: 80%;
+  }
+}
