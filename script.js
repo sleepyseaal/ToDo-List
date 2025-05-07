@@ -1,6 +1,10 @@
 const addListButton = document.getElementById("add-list");
 const listDialog = document.querySelector(".form-container");
 
+const submitDialog = document.getElementById("submit-dialog");
+const listNameInput = document.getElementById("list-name");
+const listItemsInput = document.getElementById("list-items");
+
 // Set all Cards Height to be equal to the card with max height
 function setCardHeight() {
   const cardsNodeList = document.querySelectorAll(".card");
@@ -38,11 +42,24 @@ class Lists {
     this.items = items;
     id = crypto.randomUUID();
   }
+  splitItems() {
+    const listItems = this.items.split(",");
+    return listItems;
+  }
 }
-class ListBoard {
+/* class ListBoard {
   static lists = [];
   static addList() {}
   static removeList() {}
   static editList() {}
   static displayLists() {}
-}
+} */
+
+submitDialog.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const list = new Lists(`${listNameInput.value}`, `${listItemsInput.value}`);
+
+  // Convert textarea value to an array
+  list.items = list.splitItems();
+});
