@@ -31,3 +31,18 @@ window.addEventListener("click", (e) => {
     listDialog.close();
   }
 });
+
+class Lists {
+  constructor(name, items, id) {
+    this.name = name;
+    this.items = items;
+    id = crypto.randomUUID();
+  }
+}
+class ListBoard {
+  static lists = [];
+  static addList() {}
+  static removeList() {}
+  static editList() {}
+  static displayLists() {}
+}
