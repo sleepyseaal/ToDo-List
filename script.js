@@ -5,8 +5,8 @@ const submitDialog = document.getElementById("submit-dialog");
 const listNameInput = document.getElementById("list-name");
 const listItemsInput = document.getElementById("list-items");
 
-// Set all Cards Height to be equal to the card with max height
-function setCardHeight() {
+// equalize Cards Heights with max card height
+function rqualizeCardsHeight() {
   const cardsNodeList = document.querySelectorAll(".card");
   const cards = Array.from(cardsNodeList);
 
@@ -24,7 +24,7 @@ function setCardHeight() {
   });
 }
 
-setCardHeight();
+rqualizeCardsHeight();
 
 addListButton.addEventListener("click", () => {
   listDialog.showModal();
@@ -42,6 +42,7 @@ class Lists {
     this.items = items;
     id = crypto.randomUUID();
   }
+
   splitItems() {
     const listItems = this.items.split(",");
     return listItems;
@@ -49,9 +50,11 @@ class Lists {
 }
 class ListBoard {
   static lists = [];
+
   static addList(list) {
     this.lists.push(list);
   }
+
   static removeList() {}
   static editList() {}
   static displayLists() {}
@@ -63,6 +66,5 @@ submitDialog.addEventListener("click", (e) => {
   const list = new Lists(`${listNameInput.value}`, `${listItemsInput.value}`);
   // Convert textarea value to an array
   list.items = list.splitItems();
-
   ListBoard.addList(list);
 });
