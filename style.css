@@ -92,11 +92,11 @@ body {
 
 .links-list {
   font-size: 1.2rem;
-  
 }
 
 .link {
-  margin: 2em 0 2em 
+  margin: 2em 0;
+  white-space: nowrap;
 }
 
 .link a:hover {
