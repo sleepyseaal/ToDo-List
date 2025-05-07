@@ -13,7 +13,7 @@ function setCardHeight() {
   const maxHeight = Math.max(...cardsHeights);
 
   cards.forEach((card) => {
-    card.style.height = `${maxHeight}px`;
+    card.style.height = `${maxHeight + 10}px`;
   });
 }
 
