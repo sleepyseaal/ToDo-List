@@ -174,3 +174,62 @@ h1 {
   justify-content: space-between;
 }
 
+.form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+dialog.form-container {
+  padding: 20px 30px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  font-family: Arial, sans-serif;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.form-container p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#listForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#listForm label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+#listForm input,
+#listForm textarea {
+  padding: .5em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#listForm button {
+  padding: .6em;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#listForm button:hover {
+  background-color: #0056b3;
+}
