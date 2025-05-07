@@ -25,3 +25,9 @@ setCardHeight();
 addListButton.addEventListener("click", () => {
   listDialog.showModal();
 });
+
+window.addEventListener("click", (e) => {
+  if (e.target === listDialog) {
+    listDialog.close();
+  }
+});
