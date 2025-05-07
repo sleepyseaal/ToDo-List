@@ -8,19 +8,19 @@
 
 :root {
   --primary-color: #151515;
-  --bg-color: #f2f2f2;
+  --bg-color: rgb(242, 242, 242);
   --text-color: #919191;
 }
 
 body {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: var(--primary-color);
 }
 
 .sidebar {
+  flex-grow: 1;
   background-color: var(--bg-color);
   margin-top: 1em;
   margin-left: 1em;
@@ -99,12 +99,16 @@ body {
   margin: 2em 0 2em 
 }
 
-link a:hover {
+.link a:hover {
   cursor: pointer;
 }
 
-.link a, link a:hover, link a:focus, link a:visited {
+.link a, .link a:hover, .link a:focus, .link a:visited {
   text-decoration: none;
   color: inherit;
+}
+
+main {
+  flex-grow: 3;
 }
 
