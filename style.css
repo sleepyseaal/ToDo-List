@@ -172,6 +172,7 @@ h1 {
 .icons-box {
   display: flex;
   justify-content: space-between;
+  transform: translateY(-10px);
 }
 
 .form-container {
