@@ -1,3 +1,6 @@
+const addListButton = document.getElementById("add-list");
+const listDialog = document.querySelector(".form-container");
+
 // Set all Cards Height to be equal to the card with max height
 function setCardHeight() {
   const cardsNodeList = document.querySelectorAll(".card");
@@ -18,3 +21,7 @@ function setCardHeight() {
 }
 
 setCardHeight();
+
+addListButton.addEventListener("click", () => {
+  listDialog.showModal();
+});
