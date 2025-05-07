@@ -47,19 +47,22 @@ class Lists {
     return listItems;
   }
 }
-/* class ListBoard {
+class ListBoard {
   static lists = [];
-  static addList() {}
+  static addList(list) {
+    this.lists.push(list);
+  }
   static removeList() {}
   static editList() {}
   static displayLists() {}
-} */
+}
 
 submitDialog.addEventListener("click", (e) => {
   e.preventDefault();
 
   const list = new Lists(`${listNameInput.value}`, `${listItemsInput.value}`);
-
   // Convert textarea value to an array
   list.items = list.splitItems();
+
+  ListBoard.addList(list);
 });
