@@ -136,10 +136,15 @@ h1 {
   flex-direction: column;
 }
 
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .card h2 {
   padding-right: 7em;
-  margin-top: 1em;
-  margin-bottom: .7em;
+  margin-top: .2em;
+  margin-bottom: .2em;
   color: #003366;
   font-weight: 500;
 }
