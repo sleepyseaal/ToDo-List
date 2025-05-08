@@ -125,16 +125,18 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
   place-items: center;
+  grid-auto-columns: ;
 }
 
 .card {
   border: 1px solid black;
   padding: .5em;
+  flex-direction: column;
+  width: 80%;
   background-color: var(--bg-color);
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
 }
 
 .card-content {
