@@ -7,6 +7,11 @@ const listItemsInput = document.getElementById("list-items");
 
 const cardsContainer = document.querySelector(".cards-container");
 
+function loadFromLocalStorag() {
+  const data = JSON.parse(localStorage.getItem("board"));
+  cardsContainer.innerHTML = data;
+}
+
 addListButton.addEventListener("click", () => {
   listDialog.showModal();
 });
@@ -109,6 +114,8 @@ submitDialog.addEventListener("click", (e) => {
   // Convert textarea value to an array
   list.items = list.splitItems();
   ListBoard.addList(list);
+  const board = cardsContainer.innerHTML;
+  localStorage.setItem("board", JSON.stringify(board));
   listDialog.close();
 
   // Equaliza cards height when there is more than one list
@@ -148,3 +155,5 @@ function equalizeCardsHeight() {
     card.style.height = `${maxHeight}px`;
   });
 }
+
+loadFromLocalStorag();
