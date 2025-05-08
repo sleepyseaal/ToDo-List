@@ -38,7 +38,7 @@ class ListBoard {
   }
 
   // Removes an item from the array by matching its ID and splicing it out once found
-  static removeList(listId) {
+  static removeCard(listId) {
     this.lists.forEach((list) => {
       if (list.id === listId) {
         const listIndex = this.lists.indexOf(list);
@@ -121,7 +121,7 @@ document.addEventListener("click", (e) => {
     const cardId = e.target.closest(".card")?.dataset.id;
     const element = e.target.closest(".card");
 
-    ListBoard.removeList(cardId);
+    ListBoard.removeCard(cardId);
     element.remove();
   }
 });
