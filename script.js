@@ -66,7 +66,48 @@ class ListBoard {
     listCard.classList.add("card");
     listCard.dataset.id = `${list.id}`;
     cardsContainer.appendChild(listCard);
+
+    const contentContainer = document.createElement("div");
+    contentContainer.classList.add("card-content");
+    listCard.appendChild(contentContainer);
+
+    const iconsBox = document.createElement("div");
+    iconsBox.classList.add("icons-box");
+    contentContainer.appendChild(iconsBox);
+
+    const editIcon = document.createElement("img");
+    editIcon.setAttribute("src", "./edit.svg");
+    editIcon.setAttribute("alt", "Edit the list");
+    iconsBox.appendChild(editIcon);
+
+    const xIcon = document.createElement("img");
+    xIcon.setAttribute("src", "./x.svg");
+    xIcon.setAttribute("alt", "Deleate the list");
+    iconsBox.appendChild(xIcon);
+
+    const listName = document.createElement("h3");
+    listName.textContent = `${list.name}`;
+    contentContainer.appendChild(listName);
+
+    const listUL = document.createElement("ul");
+    listUL.classList.add("list");
+    contentContainer.appendChild(listUL);
+
+    // loop through list items array and assign thier values to new li elements
+    for (let item of list.items) {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${item}`;
+      listItem.classList.add("list-item");
+      listUL.appendChild(listItem);
+    }
+
+    const cardDate = document.createElement("p");
+    cardDate.classList.add("list-date");
+    cardDate.textContent = "📅 12 Nov";
+    listCard.appendChild(cardDate);
   }
+
+  static displayCard() {}
 }
 
 submitDialog.addEventListener("click", (e) => {
