@@ -5,6 +5,8 @@ const submitDialog = document.getElementById("submit-dialog");
 const listNameInput = document.getElementById("list-name");
 const listItemsInput = document.getElementById("list-items");
 
+const cardsContainer = document.querySelector(".cards-container");
+
 // equalize Cards Heights with max card height
 function rqualizeCardsHeight() {
   const cardsNodeList = document.querySelectorAll(".card");
@@ -53,11 +55,18 @@ class ListBoard {
 
   static addList(list) {
     this.lists.push(list);
+    console.log(this.lists);
+    this.creatCard(list);
   }
 
   static removeList() {}
   static editList() {}
-  static displayLists() {}
+  static creatCard(list) {
+    const listCard = document.createElement("section");
+    listCard.classList.add("card");
+    listCard.dataset.id = `${list.id}`;
+    cardsContainer.appendChild(listCard);
+  }
 }
 
 submitDialog.addEventListener("click", (e) => {
