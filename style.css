@@ -125,7 +125,6 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
   place-items: center;
-  grid-auto-columns: ;
 }
 
 .card {
@@ -167,6 +166,7 @@ h1 {
 }
 
 .card p {
+  margin-top: .6em;
   font-weight: 600;
   color: var(--heading-color);
 }

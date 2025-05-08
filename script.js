@@ -96,7 +96,12 @@ submitDialog.addEventListener("click", (e) => {
   list.items = list.splitItems();
   ListBoard.addList(list);
   listDialog.close();
-  equalizeCardsHeight();
+
+  // Equaliza cards height when there is more than one list
+  if (ListBoard.lists.length >= 2) {
+    console.log("hi");
+    equalizeCardsHeight();
+  }
 });
 
 // equalize Cards Heights with max card height
@@ -114,13 +119,6 @@ function equalizeCardsHeight() {
   const maxHeight = Math.max(...cardsHeights);
 
   cards.forEach((card) => {
-    card.style.height = `${maxHeight + 10}px`;
+    card.style.height = `${maxHeight}px`;
   });
-  /*  console.log(cardsNodeList);
-  console.log(cards); */
-  /*   console.log(maxHeight);
-   */
-  console.log(cards);
 }
-
-equalizeCardsHeight();

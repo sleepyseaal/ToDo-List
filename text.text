@@ -1,0 +1,6 @@
+const targetList = Lists.list.name
+if searchlistarea.value === Lists.list.name
+
+const Id = targetList.Id
+
+searchlist.setattribute= ("href", `.section[datakey = Id]`)
