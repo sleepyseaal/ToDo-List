@@ -91,7 +91,11 @@ class ListBoard {
 
     const cardDate = document.createElement("p");
     cardDate.classList.add("list-date");
-    cardDate.textContent = "📅 12 Nov";
+
+    const day = new Date().getDay();
+    // Short name for the month(ex: December > Dec)
+    const month = new Date().toLocaleString("default", { month: "short" });
+    cardDate.textContent = `📅 ${day} ${month}`;
     listCard.appendChild(cardDate);
   }
 
