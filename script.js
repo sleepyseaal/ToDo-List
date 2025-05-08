@@ -70,6 +70,7 @@ class ListBoard {
     const xIcon = document.createElement("img");
     xIcon.setAttribute("src", "./x.svg");
     xIcon.setAttribute("alt", "Deleate the list");
+    xIcon.setAttribute("role", "button");
     iconsBox.appendChild(xIcon);
 
     const listName = document.createElement("h3");
@@ -109,6 +110,19 @@ submitDialog.addEventListener("click", (e) => {
   // Equaliza cards height when there is more than one list
   if (ListBoard.lists.length >= 2) {
     equalizeCardsHeight();
+  }
+});
+
+document.addEventListener("click", (e) => {
+  const xNodeList = document.querySelectorAll(`img[src="./x.svg"]`);
+  const xIcons = Array.from(xNodeList);
+
+  if (xIcons.includes(e.target)) {
+    const cardId = e.target.closest(".card")?.dataset.id;
+    const element = e.target.closest(".card");
+
+    ListBoard.removeList(cardId);
+    element.remove();
   }
 });
 
