@@ -37,7 +37,16 @@ class ListBoard {
     this.creatCard(list);
   }
 
-  static removeList() {}
+  // Removes an item from the array by matching its ID and splicing it out once found
+  static removeList(listId) {
+    this.lists.forEach((list) => {
+      if (list.id === listId) {
+        const listIndex = this.lists.indexOf(list);
+        this.lists.splice(listIndex, 1);
+      }
+    });
+  }
+
   static editList() {}
   static creatCard(list) {
     const listCard = document.createElement("section");
@@ -99,7 +108,6 @@ submitDialog.addEventListener("click", (e) => {
 
   // Equaliza cards height when there is more than one list
   if (ListBoard.lists.length >= 2) {
-    console.log("hi");
     equalizeCardsHeight();
   }
 });
