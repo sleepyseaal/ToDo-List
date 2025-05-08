@@ -40,7 +40,7 @@ class Lists {
   constructor(name, items, id) {
     this.name = name;
     this.items = items;
-    id = crypto.randomUUID();
+    this.id = crypto.randomUUID();
   }
 
   splitItems() {
@@ -67,4 +67,7 @@ submitDialog.addEventListener("click", (e) => {
   // Convert textarea value to an array
   list.items = list.splitItems();
   ListBoard.addList(list);
+  listDialog.close();
 });
+
+console.log(ListBoard.lists);
