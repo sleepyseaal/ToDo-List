@@ -7,27 +7,6 @@ const listItemsInput = document.getElementById("list-items");
 
 const cardsContainer = document.querySelector(".cards-container");
 
-// equalize Cards Heights with max card height
-function rqualizeCardsHeight() {
-  const cardsNodeList = document.querySelectorAll(".card");
-  const cards = Array.from(cardsNodeList);
-
-  // Assign an array with cards height values
-  const cardsHeights = cards.map((card) => {
-    const height = card.offsetHeight;
-    return height;
-  });
-
-  // Assign max card height value
-  const maxHeight = Math.max(...cardsHeights);
-
-  cards.forEach((card) => {
-    card.style.height = `${maxHeight + 10}px`;
-  });
-}
-
-rqualizeCardsHeight();
-
 addListButton.addEventListener("click", () => {
   listDialog.showModal();
 });
@@ -55,7 +34,6 @@ class ListBoard {
 
   static addList(list) {
     this.lists.push(list);
-    console.log(this.lists);
     this.creatCard(list);
   }
 
@@ -118,6 +96,31 @@ submitDialog.addEventListener("click", (e) => {
   list.items = list.splitItems();
   ListBoard.addList(list);
   listDialog.close();
+  equalizeCardsHeight();
 });
 
-console.log(ListBoard.lists);
+// equalize Cards Heights with max card height
+function equalizeCardsHeight() {
+  const cardsNodeList = document.querySelectorAll(".card");
+  const cards = Array.from(cardsNodeList);
+
+  // Assign an array with cards height values
+  const cardsHeights = cards.map((card) => {
+    const height = card.offsetHeight;
+    return height;
+  });
+
+  // Assign max card height value
+  const maxHeight = Math.max(...cardsHeights);
+
+  cards.forEach((card) => {
+    card.style.height = `${maxHeight + 10}px`;
+  });
+  /*  console.log(cardsNodeList);
+  console.log(cards); */
+  /*   console.log(maxHeight);
+   */
+  console.log(cards);
+}
+
+equalizeCardsHeight();
